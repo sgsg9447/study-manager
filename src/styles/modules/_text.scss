@@ -1,0 +1,81 @@
+//font-size
+//title
+.text-title-14 {
+  @include text-style(14);
+  font-weight: 700;
+}
+.text-title-16 {
+  @include text-style(16);
+  font-weight: 700;
+}
+.text-title-18 {
+  @include text-style(18);
+  font-weight: 700;
+}
+.text-title-24 {
+  @include text-style(24);
+  font-weight: 700;
+}
+.text-title-40 {
+  @include text-style(40);
+  font-weight: 700;
+}
+//content
+.text-content-14 {
+  @include text-style(14);
+  font-weight: 500;
+}
+.text-content-16 {
+  @include text-style(16);
+  font-weight: 500;
+}
+.text-content-18 {
+  @include text-style(18);
+  font-weight: 500;
+}
+.text-content-24 {
+  @include text-style(24);
+  font-weight: 500;
+}
+.text-content-40 {
+  @include text-style(40);
+  font-weight: 500;
+}
+
+//colors
+.text-color-primary {
+  @include text-color($primary);
+}
+.text-color-primaryLight {
+  @include text-color($primaryLight);
+}
+.text-color-blue {
+  @include text-color($blue);
+}
+.text-color-black {
+  @include text-color($black);
+}
+.text-color-background {
+  @include text-color($background);
+}
+.text-color-gray {
+  @include text-color($gray);
+}
+.text-color-grayDark {
+  @include text-color($grayDark);
+}
+.text-color-line {
+  @include text-color($line);
+}
+.text-color-lineLight {
+  @include text-color($lineLight);
+}
+.text-color-white {
+  @include text-color($white);
+}
+.text-color-red {
+  @include text-color($red);
+}
+.text-color-redLight {
+  @include text-color($redLight);
+}

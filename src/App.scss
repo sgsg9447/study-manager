@@ -11,10 +11,13 @@
 @import "./styles/mixins/text-style";
 
 @import "./styles/modules/button";
+@import "./styles/modules/text";
+@import "./styles/modules/modal";
 
 @import "./styles/layouts/grids";
 
 @import "./pages/home/home";
+@import "./pages/code/code";
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
