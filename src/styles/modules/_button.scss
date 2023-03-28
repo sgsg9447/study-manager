@@ -1,0 +1,82 @@
+%btn-base {
+  @include inline-flexbox;
+  padding: 0 8px;
+  font-weight: 700;
+  border-radius: 4px;
+  // width: 100%;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+//styles
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $primary;
+  width: 100%;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $primaryLight;
+  }
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $black;
+  width: 100%;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.btn-outlined {
+  @extend %btn-base;
+  color: $primary;
+  background-color: $white;
+  border: 1px solid $primary;
+  width: 100%;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.btn-text {
+  @extend %btn-base;
+  color: $primary;
+  background-color: transparent;
+
+  &:hover {
+    color: $gray;
+  }
+}
+
+//sizes
+.btn-xs {
+  @include text-style(14);
+  height: 32px;
+}
+
+.btn-sm {
+  @include text-style(16);
+  height: 40px;
+}
+
+.btn-md {
+  @include text-style(16);
+  height: 48px;
+}
+
+.btn-lg {
+  @include text-style(18);
+  height: 55px;
+}
