@@ -1,0 +1,17 @@
+.card {
+  @include column-flexbox(start,start);
+  gap: 14px;
+
+  background-color: $grayDark;
+  max-width: 300px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+
+  .square {
+    width: 260px;
+    height: 130px;
+    background-color: $lineLight;
+    border-radius: 2px;
+  }
+}

@@ -1,0 +1,12 @@
+.progressbar {
+  width: 150px;
+  height: 5px;
+  background-color: $lineLight;
+  border-radius: 10px;
+
+  .progress {
+    background-color: $primary;
+    height: 5px;
+    border-radius: 10px;
+  }
+}

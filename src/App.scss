@@ -13,11 +13,17 @@
 @import "./styles/modules/button";
 @import "./styles/modules/text";
 @import "./styles/modules/modal";
+@import "./styles/modules/profileIcon";
+@import "./styles/modules/progressbar";
 
 @import "./styles/layouts/grids";
 
+@import "./components/feature/room/title";
+@import "./components/feature/room/card";
+
 @import "./pages/home/home";
 @import "./pages/code/code";
+@import "./pages/room/room";
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
