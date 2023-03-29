@@ -1,0 +1,149 @@
+.item {
+  box-sizing: border-box;
+
+  &:nth-child(1) {
+    grid-row: 1/2;
+  }
+  &:nth-child(2) {
+    grid-row: 2/3;
+  }
+  &:nth-child(3) {
+    grid-row: 3/4;
+  }
+  &:nth-child(4) {
+    grid-column: 2/4;
+  }
+  &:nth-child(5) {
+    grid-row: 2/4;
+  }
+  &:nth-child(6) {
+    grid-row: 2/4;
+  }
+  .item-title {
+    @include flexbox(start);
+    background-color: $grayDark;
+    padding: 20px;
+
+    // margin: 20px;
+  }
+}
+
+.study-info {
+  background-color: $grayDark;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.user-info {
+  background-color: $grayDark;
+
+  padding: 25px 10px;
+
+  .user-profile {
+    @include flexbox(start);
+  }
+}
+
+.member {
+  height: 100%;
+  background-color: $grayDark;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-height: 300px;
+  overflow-y: scroll;
+
+  .member-container {
+    .member-wrapper {
+      @include flexbox(start);
+      padding-bottom: 20px;
+
+      .member-content-wrapper {
+        margin-left: 10px;
+
+        .member-text-wrapper {
+          @include flexbox(start);
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+.fine {
+  background-color: $grayDark;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  .fine-container {
+    .profile-wrapper {
+      @include flexbox(start);
+      padding: 10px 26px;
+    }
+  }
+}
+
+.todo {
+  padding: 20px;
+
+  .todo-content-layout-container {
+    height: 100%;
+    // width: 100%;
+    @include column-flexbox(between, start);
+
+    .todo-tontent-layout-wrapper {
+      max-height: 90%;
+      width: 100%;
+      overflow-y: scroll;
+      .todo-content-container {
+        @include flexbox(between);
+        background-color: $grayDark;
+        margin-top: 20px;
+        padding: 26px 30px;
+        border-radius: 8px;
+
+        .todo-content-wrapper {
+          @include flexbox(start);
+
+          input {
+            border: none;
+            background-color: transparent;
+          }
+        }
+
+        .todo-icon-wrapper {
+          @include flexbox(start);
+          gap: 5px;
+        }
+      }
+    }
+
+    .add-todo-container {
+      @include flexbox(start);
+      background-color: $grayDark;
+      margin: 20px 0;
+      padding: 14px 30px;
+      width: 100%;
+      border-radius: 8px;
+
+      input {
+        border: none;
+        background-color: transparent;
+        //TODO : padding 조정해야함
+        padding: 15px 0;
+        // margin: 20px 0;
+      }
+    }
+  }
+}
+
+.done {
+  //TODO: 미디어쿼리 데스크탑 조정필요
+  padding: 20px;
+  overflow-y: scroll;
+
+  .card-wrapper {
+    @include flexbox(start);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}

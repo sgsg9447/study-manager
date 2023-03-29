@@ -1,0 +1,25 @@
+.title {
+  @include flexbox(start);
+  .blue-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $blue;
+  }
+
+  .primary-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $primary;
+  }
+
+  .red-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $red;
+  }
+
+  
+}

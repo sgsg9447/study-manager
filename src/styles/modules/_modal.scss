@@ -1,0 +1,62 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include flexbox();
+}
+
+.modal-container {
+  @include column-flexbox();
+  gap: 20px;
+  background-color: $grayDark;
+  padding: 20px;
+  width: 100%;
+  max-width: 440px;
+  z-index: 1;
+
+  .variant-code {
+    @include column-flexbox(start, start);
+    width: 100%;
+    gap: 20px;
+    input {
+      border: none;
+      color: $white;
+    }
+  }
+  .variant-certification {
+    @include column-flexbox(start, start);
+    width: 100%;
+    gap: 20px;
+    input {
+      border: 1px solid $gray;
+    }
+
+    .input-file-box {
+      @include flexbox();
+      background-color: $background;
+      width: 100%;
+      padding: 0 16px;
+      height: 40px;
+      border: 1px solid $background;
+      border-radius: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .hidden {
+      position: fixed;
+    }
+  }
+
+  .button-wrapper {
+    @include flexbox();
+    gap: 10px;
+    width: 100%;
+  }
+}
