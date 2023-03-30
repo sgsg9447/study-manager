@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import useLogin from "../../hooks/useLogin";
 import useSignup from "../../hooks/useSignup";
 import Button from "./Button";
 import Text from "./Text";
@@ -19,7 +20,8 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
-  const { error, isPending, signup } = useSignup();
+  const { signup } = useSignup();
+  const { login } = useLogin();
 
   //TODO : any 바꾸기
   const handleData = (event: any) => {
@@ -32,11 +34,14 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
     }
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSignupSubmit = (event: any) => {
     event.preventDefault();
-    console.log(email, password);
     signup(email, password, displayName);
-
+    closeModal();
+  };
+  const handleLoginSubmit = (event: any) => {
+    event.preventDefault();
+    login(email, password);
     closeModal();
   };
 
@@ -83,6 +88,14 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
                 onChange={handleData}
               />
             </fieldset>
+            <div className="button-wrapper">
+              <Button onClick={closeModal} size="sm" variant="outlined">
+                취소
+              </Button>
+              <Button onClick={handleSignupSubmit} size="sm">
+                확인
+              </Button>
+            </div>
           </form>
         ) : (
           <form>
@@ -108,17 +121,16 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
                 onChange={handleData}
               />
             </fieldset>
+            <div className="button-wrapper">
+              <Button onClick={closeModal} size="sm" variant="outlined">
+                취소
+              </Button>
+              <Button onClick={handleLoginSubmit} size="sm">
+                확인
+              </Button>
+            </div>
           </form>
         )}
-
-        <div className="button-wrapper">
-          <Button onClick={closeModal} size="sm" variant="outlined">
-            취소
-          </Button>
-          <Button onClick={handleSubmit} size="sm">
-            확인
-          </Button>
-        </div>
       </div>
     </div>
   );

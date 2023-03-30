@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useState } from "react";
 import { appAuth } from "../firebase/config";
 
-export default function Signup() {
+export default function useSignup() {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
