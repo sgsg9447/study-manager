@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 import useSignup from "../../hooks/useSignup";
 import Button from "./Button";
@@ -22,6 +23,7 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
   const [displayName, setDisplayName] = useState("");
   const { signup } = useSignup();
   const { login } = useLogin();
+  const navigate = useNavigate();
 
   //TODO : any 바꾸기
   const handleData = (event: any) => {
@@ -43,6 +45,7 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
     event.preventDefault();
     login(email, password);
     closeModal();
+    navigate("/room");
   };
 
   return (
