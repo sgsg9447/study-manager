@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import useSignup from "../../hooks/useSignup";
 import Button from "./Button";
 import Text from "./Text";
 
@@ -18,6 +19,7 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const { error, isPending, signup } = useSignup();
 
   //TODO : any 바꾸기
   const handleData = (event: any) => {
@@ -33,6 +35,8 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     console.log(email, password);
+    signup(email, password, displayName);
+
     closeModal();
   };
 
