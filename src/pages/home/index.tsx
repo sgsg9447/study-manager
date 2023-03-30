@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Button from "../../components/common/Button";
-import LoginModal from "../../components/common/LoginModal";
+import { useState } from 'react';
+import Button from '../../components/common/Button';
+import LoginModal from '../../components/common/LoginModal';
 
 export default function Home() {
   const [isOpenSignUpModal, setIsOpenSignUpModal] = useState(false);
@@ -18,13 +18,13 @@ export default function Home() {
       <div className="home-wrapper">
         <Button
           onClick={() => setIsOpenSignUpModal(true)}
-          style={{ width: "300px" }}
+          style={{ width: '300px' }}
         >
           회원가입하기
         </Button>
         <Button
           onClick={() => setIsOpenLoginModal(true)}
-          style={{ width: "300px" }}
+          style={{ width: '300px' }}
         >
           로그인하기
         </Button>

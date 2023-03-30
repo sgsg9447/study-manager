@@ -1,52 +1,31 @@
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import useLogin from "../../hooks/useLogin";
-import useSignup from "../../hooks/useSignup";
-import Button from "./Button";
-import Text from "./Text";
+import Button from '../Button';
+import Text from '../Text';
+import useLoginModal from './useLoginModal';
 
 //TODO : UI 퍼블리싱
 //TODO : 비밀번호 확인 유효성검사 추가
 
-type Variant = "signup" | "login";
+type Variant = 'signup' | 'login';
 
-interface Props {
+interface LoginModalProps {
   variant?: Variant;
   closeModal: () => void;
   onSubmit: any;
 }
 
-export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
-  const inputRef = useRef(null);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
-  const { signup } = useSignup();
-  const { login } = useLogin();
-  const navigate = useNavigate();
-
-  //TODO : any 바꾸기
-  const handleData = (event: any) => {
-    if (event.target.type === "email") {
-      setEmail(event.target.value);
-    } else if (event.target.type === "password") {
-      setPassword(event.target.value);
-    } else if (event.target.type === "text") {
-      setDisplayName(event.target.value);
-    }
-  };
-
-  const handleSignupSubmit = (event: any) => {
-    event.preventDefault();
-    signup(email, password, displayName);
-    closeModal();
-  };
-  const handleLoginSubmit = (event: any) => {
-    event.preventDefault();
-    login(email, password);
-    closeModal();
-    navigate("/room");
-  };
+export default function LoginModal({
+  variant,
+  closeModal,
+  onSubmit,
+}: LoginModalProps) {
+  const {
+    handleData,
+    handleSignupSubmit,
+    handleLoginSubmit,
+    email,
+    password,
+    displayName,
+  } = useLoginModal({ onClose: closeModal });
 
   return (
     <div className="background" onClick={closeModal}>
@@ -56,7 +35,7 @@ export default function LoginModal({ variant, closeModal, onSubmit }: Props) {
           e.stopPropagation();
         }}
       >
-        {variant === "signup" ? (
+        {variant === 'signup' ? (
           <form>
             <fieldset>
               <label htmlFor="newEmail">
