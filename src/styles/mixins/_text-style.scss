@@ -1,5 +1,11 @@
 //TODO: 퍼블리싱 후 전체적인 font-weight 확인 후 변경 필요
 
+@mixin text-style-12() {
+  font-size: $font-size-12;
+  line-height: $line-height-12;
+  letter-spacing: $letter-spacing-12;
+}
+
 @mixin text-style-14() {
   font-size: $font-size-14;
   line-height: $line-height-14;
@@ -31,6 +37,9 @@
 }
 
 @mixin text-style($size, $color: false) {
+  @if ($size ==12) {
+    @include text-style-12();
+  }
   @if ($size ==14) {
     @include text-style-14();
   }
