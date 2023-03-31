@@ -1,11 +1,12 @@
 import { useRecoilValue } from "recoil";
 import { userAtom } from "../../store/userAtom";
-import Done from "./Done";
-import Fine from "./Fine";
-import Member from "./Member";
-import StudyInfo from "./StudyInfo";
-import Todo from "./Todo";
-import UserInfo from "./UserInfo";
+import Done from "../../components/feature/room/done";
+import StudyInfo from "../../components/feature/room/studyInfo";
+import Member from "../../components/feature/room/member";
+import Fine from "../../components/feature/room/fine";
+import UserInfo from "../../components/feature/room/userInfo";
+import Todo from "../../components/feature/room/todo";
+
 
 export default function Room() {
   const user = useRecoilValue(userAtom);
@@ -17,7 +18,7 @@ export default function Room() {
         {/* <img src={user.profileImage} /> */}
         <StudyInfo />
         <Member />
-        <Fine />
+        <Fine/>
         <UserInfo />
         <Todo />
         <Done />

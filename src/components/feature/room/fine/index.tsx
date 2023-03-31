@@ -1,7 +1,7 @@
 import * as Icon from "react-feather";
-import ProfileIcon from "../../components/common/profileIcon/ProfileIcon";
-import Text from "../../components/common/text/Text";
-import Title from "../../components/feature/room/Title";
+import ProfileIcon from "../../../common/profileIcon/ProfileIcon";
+import Text from "../../../common/text/Text";
+import Title from "../title";
 
 export default function Fine() {
   return (

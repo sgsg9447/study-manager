@@ -1,7 +1,7 @@
 import * as Icon from "react-feather";
-import ProfileIcon from "../../components/common/profileIcon/ProfileIcon";
-import ProgressBar from "../../components/common/progressbar/ProgressBar";
-import Text from "../../components/common/text/Text";
+import ProfileIcon from "../../../common/profileIcon/ProfileIcon";
+import ProgressBar from "../../../common/progressbar/ProgressBar";
+import Text from "../../../common/text/Text";
 
 export default function Member() {
   return (
