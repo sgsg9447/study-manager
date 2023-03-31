@@ -1,5 +1,3 @@
-import { useState } from "react";
-import useSignup from "../../../hooks/useSignup";
 import CertificationModal from "./CertificationModal";
 import CodeModal from "./CodeModal";
 import LoginModal from "./LoginModal";
@@ -24,7 +22,9 @@ export default function Modal({ variant, onClose, onSubmit }: ModalProps) {
         {variant === "signup" && <SignupModal onClose={onClose} />}
         {variant === "login" && <LoginModal onClose={onClose} />}
         {variant === "code" && <CodeModal onClose={onClose} />}
-        {variant === "certification" && <CertificationModal />}
+        {variant === "certification" && (
+          <CertificationModal onClose={onClose} />
+        )}
       </div>
     </div>
   );
