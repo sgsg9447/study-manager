@@ -71,7 +71,7 @@ const useModal = ({ onClose }: { onClose: () => void }) => {
 
   const handleCertificationSubmit = (event: any) => {
     event.preventDefault();
-    //submit 처리 로직 db로 전송
+    //submit 처리 로직 
   };
 
   return {

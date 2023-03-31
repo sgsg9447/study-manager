@@ -6,11 +6,10 @@ type Variant = "login" | "signup" | "code" | "certification";
 
 interface ModalProps {
   variant?: Variant;
-  onClose: () => void;
-  onSubmit: any;
+  onClose: any;
 }
 
-export default function Modal({ variant, onClose, onSubmit }: ModalProps) {
+export default function Modal({ variant, onClose }: ModalProps) {
   return (
     <div className="background" onClick={onClose}>
       <div
