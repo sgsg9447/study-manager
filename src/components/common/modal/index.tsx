@@ -41,7 +41,7 @@ export default function Modal({ variant, onClose, onSubmit }: ModalProps) {
         }}
       >
         {variant === "signup" && <SignupModal onClose={onClose} />}
-        {variant === "login" && <LoginModal />}
+        {variant === "login" && <LoginModal onClose={onClose} />}
         {variant === "code" && <CodeModal />}
         {variant === "certification" && <CertificationModal />}
       </div>
