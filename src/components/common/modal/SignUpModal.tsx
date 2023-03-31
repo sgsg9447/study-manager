@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import Button from "./Button";
-import Text from "./Text";
+import Button from "../button/Button";
+import Text from "../text/Text";
 
 interface Props {
   closeModal: () => void;

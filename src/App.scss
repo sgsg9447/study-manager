@@ -10,14 +10,12 @@
 @import "./styles/mixins/responsive";
 @import "./styles/mixins/text-style";
 
-@import "./styles/modules/button";
-@import "./styles/modules/text";
-@import "./styles/modules/modal";
-@import "./styles/modules/profileIcon";
-@import "./styles/modules/progressbar";
-
 @import "./styles/layouts/grids";
 
+@import "./components/common/button/button";
+@import "./components/common/text/text";
+@import "./components/common/profileIcon/profileIcon";
+@import "./components/common/progressbar/progressbar";
 
 @import "./pages/home/home";
 @import "./pages/code/code";

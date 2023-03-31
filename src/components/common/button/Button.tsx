@@ -1,17 +1,17 @@
-import { CSSProperties, MouseEventHandler, ReactNode } from 'react';
+import { CSSProperties, MouseEventHandler, ReactNode } from "react";
 
-type Variant = 'outlined' | 'contained' | 'text';
+type Variant = "outlined" | "contained" | "text";
 const styleObj = {
-  outlined: 'btn-outlined',
-  contained: 'btn-primary',
-  text: 'btn-text',
+  outlined: "btn-outlined",
+  contained: "btn-primary",
+  text: "btn-text",
 };
 
 const Button = ({
   children,
   onClick,
-  variant = 'contained',
-  size = 'md',
+  variant = "contained",
+  size = "md",
   style,
 }: {
   children: ReactNode;

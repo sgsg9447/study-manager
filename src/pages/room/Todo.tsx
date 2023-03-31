@@ -1,9 +1,9 @@
-import Button from '../../components/common/Button';
-import Text from '../../components/common/Text';
-import * as Icon from 'react-feather';
-import TodoContent from '../../components/feature/room/TodoContent';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import Title from '../../components/feature/room/Title';
+import Button from "../../components/common/button/Button";
+import Text from "../../components/common/text/Text";
+import * as Icon from "react-feather";
+import TodoContent from "../../components/feature/room/TodoContent";
+import { ChangeEvent, FormEvent, useState } from "react";
+import Title from "../../components/feature/room/Title";
 
 export default function Todo() {
   const [isAdd, setIsAdd] = useState(false);
@@ -20,7 +20,7 @@ export default function Todo() {
 
       <div className="todo-content-layout-container">
         <div className="todo-tontent-layout-wrapper">
-          <TodoContent content={'tttt'} id={1} />
+          <TodoContent content={"tttt"} id={1} />
         </div>
 
         {isAdd ? (
@@ -46,7 +46,7 @@ export default function Todo() {
               type="title"
               size="lg"
               color="primary"
-              style={{ paddingLeft: '10px' }}
+              style={{ paddingLeft: "10px" }}
             >
               ADD TODO
             </Text>

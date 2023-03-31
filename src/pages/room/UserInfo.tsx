@@ -1,5 +1,5 @@
-import ProfileIcon from "../../components/common/ProfileIcon";
-import Text from "../../components/common/Text";
+import ProfileIcon from "../../components/common/profileIcon/ProfileIcon";
+import Text from "../../components/common/text/Text";
 
 export default function UserInfo() {
   return (
