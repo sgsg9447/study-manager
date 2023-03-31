@@ -3,8 +3,9 @@ import Text from "../text/Text";
 import useModal from "./useModal";
 
 export default function LoginModal({ onClose }: { onClose: () => void }) {
-  const { handleData, handleLoginSubmit, email, password, displayName } =
-    useModal({ onClose: onClose });
+  const { handleData, handleLoginSubmit, email, password } = useModal({
+    onClose: onClose,
+  });
 
   return (
     <form>

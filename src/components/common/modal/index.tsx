@@ -13,25 +13,6 @@ interface ModalProps {
 }
 
 export default function Modal({ variant, onClose, onSubmit }: ModalProps) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
-
-  const { signup } = useSignup();
-
-  const handleData = (event: any) => {
-    if (event.target.type === "email") {
-      setEmail(event.target.value);
-    } else if (event.target.type === "password") {
-      setPassword(event.target.value);
-    }
-  };
-  const handleSignupSubmit = (event: any) => {
-    event.preventDefault();
-    signup(email, password, displayName);
-    onClose();
-  };
-
   return (
     <div className="background" onClick={onClose}>
       <div
@@ -42,7 +23,7 @@ export default function Modal({ variant, onClose, onSubmit }: ModalProps) {
       >
         {variant === "signup" && <SignupModal onClose={onClose} />}
         {variant === "login" && <LoginModal onClose={onClose} />}
-        {variant === "code" && <CodeModal />}
+        {variant === "code" && <CodeModal onClose={onClose} />}
         {variant === "certification" && <CertificationModal />}
       </div>
     </div>
