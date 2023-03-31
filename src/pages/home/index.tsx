@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/common/button/Button";
+import Modal from "../../components/common/modal";
 import LoginModal from "../../components/common/modal/LoginModal";
 
 export default function Home() {
@@ -29,18 +30,10 @@ export default function Home() {
           로그인하기
         </Button>
         {isOpenSignUpModal && (
-          <LoginModal
-            variant="signup"
-            closeModal={closeModal}
-            onSubmit={onSubmit}
-          />
+          <Modal variant="signup" onClose={closeModal} onSubmit={onSubmit} />
         )}
         {isOpenLoginModal && (
-          <LoginModal
-            variant="login"
-            closeModal={closeModal}
-            onSubmit={onSubmit}
-          />
+          <Modal variant="login" onClose={closeModal} onSubmit={onSubmit} />
         )}
       </div>
     </div>

@@ -13,7 +13,7 @@ interface LoginModalProps {
   onSubmit: any;
 }
 
-export default function LoginModal({
+export default function LoginModal2({
   variant,
   closeModal,
   onSubmit,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/common/button/Button";
-import Modal from "../../components/common/modal/Modal";
+import Modal from "../../components/common/modal";
 
 export default function Code() {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -22,7 +22,7 @@ export default function Code() {
           입장코드
         </Button>
         {isOpenModal && (
-          <Modal variant="code" onSubmit={onSubmit} closeModal={closeModal} />
+          <Modal variant="code" onSubmit={onSubmit} onClose={closeModal} />
         )}
       </div>
     </div>

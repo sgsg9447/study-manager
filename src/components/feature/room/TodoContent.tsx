@@ -1,6 +1,6 @@
 import { ChangeEvent, useRef, useState } from "react";
 import * as Icon from "react-feather";
-import Modal from "../../common/modal/Modal";
+import Modal from "../../common/modal";
 import Text from "../../common/text/Text";
 
 interface Props {
@@ -66,7 +66,7 @@ export default function TodoContent({ content, id }: Props) {
         <Modal
           variant="certification"
           onSubmit={onSubmit}
-          closeModal={closeModal}
+          onClose={closeModal}
         />
       )}
     </>

@@ -1,8 +1,11 @@
 import Text from "../text/Text";
 
-interface Props {}
+interface LoginModalProps {
+  closeModal?: () => void;
+  onSubmit?: any;
+}
 
-export default function SignupModal() {
+export default function LoginModal({ closeModal, onSubmit }: LoginModalProps) {
   const handleData = () => {};
   return (
     <form>
