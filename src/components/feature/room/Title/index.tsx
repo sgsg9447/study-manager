@@ -1,4 +1,5 @@
 import Text from "../../../common/text/Text";
+//TODO : style
 
 type NameType = "fine" | "todo" | "done";
 

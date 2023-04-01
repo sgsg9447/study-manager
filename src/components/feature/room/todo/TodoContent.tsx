@@ -1,8 +1,8 @@
 import { ChangeEvent, useRef, useState } from "react";
 import * as Icon from "react-feather";
-import useShowModal from "../../../hooks/useShowModal";
-import Modal from "../../common/modal";
-import Text from "../../common/text/Text";
+import useShowModal from "../../../../hooks/useShowModal";
+import Modal from "../../../common/modal";
+import Text from "../../../common/text/Text";
 
 interface Props {
   content: string;

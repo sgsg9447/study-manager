@@ -1,4 +1,4 @@
-import Text from "../../components/common/text/Text";
+import Text from "../../../common/text/Text";
 
 export default function StudyInfo() {
   return (

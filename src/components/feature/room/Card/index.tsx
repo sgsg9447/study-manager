@@ -1,4 +1,3 @@
-import React from "react";
 import Text from "../../../common/text/Text";
 
 export default function Card({ doneData }: any) {

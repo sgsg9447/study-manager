@@ -1,5 +1,5 @@
-import Card from '../../components/feature/room/Card';
-import Title from '../../components/feature/room/Title';
+import Card from "../card";
+import Title from "../title";
 
 export default function Done() {
   return (

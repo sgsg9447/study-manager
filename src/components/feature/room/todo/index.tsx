@@ -1,9 +1,9 @@
-import Button from "../../components/common/button/Button";
-import Text from "../../components/common/text/Text";
 import * as Icon from "react-feather";
-import TodoContent from "../../components/feature/room/TodoContent";
 import { ChangeEvent, FormEvent, useState } from "react";
-import Title from "../../components/feature/room/Title";
+import Title from "../title";
+import TodoContent from "./TodoContent";
+import Button from "../../../common/button/Button";
+import Text from "../../../common/text/Text";
 
 export default function Todo() {
   const [isAdd, setIsAdd] = useState(false);
