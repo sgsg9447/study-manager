@@ -2,9 +2,10 @@ import Button from "../button/Button";
 import Text from "../text/Text";
 import useModal from "./useModal";
 
-export default function SignupModal({ onClose }: { onClose: () => void }) {
-  const { handleData, handleSignupSubmit, email, password, displayName } =
-    useModal({ onClose: onClose });
+export default function LoginModal({ onClose }: { onClose: () => void }) {
+  const { handleData, handleLoginSubmit, email, password } = useModal({
+    onClose: onClose,
+  });
 
   return (
     <form>
@@ -29,22 +30,12 @@ export default function SignupModal({ onClose }: { onClose: () => void }) {
           value={password}
           onChange={handleData}
         />
-        <label htmlFor="newNickName">
-          <Text>NickName : </Text>
-        </label>
-        <input
-          type="text"
-          id="newNickName"
-          required
-          value={displayName}
-          onChange={handleData}
-        />
       </fieldset>
       <div className="button-wrapper">
         <Button onClick={onClose} size="sm" variant="outlined">
           취소
         </Button>
-        <Button onClick={handleSignupSubmit} size="sm">
+        <Button onClick={handleLoginSubmit} size="sm">
           확인
         </Button>
       </div>

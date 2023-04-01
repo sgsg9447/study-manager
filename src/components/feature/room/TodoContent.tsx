@@ -1,6 +1,7 @@
 import { ChangeEvent, useRef, useState } from "react";
 import * as Icon from "react-feather";
-import Modal from "../../common/modal/Modal";
+import useShowModal from "../../../hooks/useShowModal";
+import Modal from "../../common/modal";
 import Text from "../../common/text/Text";
 
 interface Props {
@@ -12,13 +13,8 @@ export default function TodoContent({ content, id }: Props) {
   const formRef = useRef(null);
   const [isEdit, setIsEdit] = useState(false);
   const [editTodoContent, setEditTodoContent] = useState(content);
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const clickModal = () => {
-    setIsOpenModal(true);
-  };
-  const closeModal = () => {
-    setIsOpenModal(false);
-  };
+  const [isShowModal, openModal, closeModal] = useShowModal();
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEditTodoContent(e.target.value);
   };
@@ -31,7 +27,7 @@ export default function TodoContent({ content, id }: Props) {
         <div className="todo-content-wrapper">
           <button
             onClick={() => {
-              clickModal();
+              openModal();
             }}
           >
             <Icon.CheckCircle size={18} color="white" />
@@ -62,13 +58,7 @@ export default function TodoContent({ content, id }: Props) {
           </button>
         </div>
       </div>
-      {isOpenModal && (
-        <Modal
-          variant="certification"
-          onSubmit={onSubmit}
-          closeModal={closeModal}
-        />
-      )}
+      {isShowModal && <Modal variant="certification" onClose={closeModal} />}
     </>
   );
 }

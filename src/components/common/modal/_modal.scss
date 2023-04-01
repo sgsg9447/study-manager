@@ -17,15 +17,6 @@
   max-width: 440px;
   z-index: 1;
 
-  .variant-code {
-    @include column-flexbox(start, start);
-    width: 100%;
-    gap: 20px;
-    input {
-      border: none;
-      color: $white;
-    }
-  }
   .variant-certification {
     @include column-flexbox(start, start);
     width: 100%;
@@ -54,6 +45,15 @@
     }
   }
 
+  .variant-code {
+    @include column-flexbox(start, start);
+    width: 100%;
+    gap: 20px;
+    input {
+      border: none;
+      color: $white;
+    }
+  }
   .button-wrapper {
     @include flexbox();
     gap: 10px;

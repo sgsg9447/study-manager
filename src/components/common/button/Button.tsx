@@ -15,7 +15,7 @@ const Button = ({
   style,
 }: {
   children: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: any;
   variant?: Variant;
   size?: Size;
   style?: CSSProperties;

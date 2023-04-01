@@ -1,46 +1,25 @@
-import { useState } from "react";
 import Button from "../../components/common/button/Button";
-import LoginModal from "../../components/common/modal/LoginModal";
+import Modal from "../../components/common/modal";
+import useShowModal from "../../hooks/useShowModal";
 
 export default function Home() {
-  const [isOpenSignUpModal, setIsOpenSignUpModal] = useState(false);
-  const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
+  const [isShowSignupModal, openSignupModal, closeSignupModal] = useShowModal();
+  const [isShowLoginModal, openLoginModal, closeLoginModal] = useShowModal();
 
-  const closeModal = () => {
-    setIsOpenSignUpModal(false);
-    setIsOpenLoginModal(false);
-  };
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
   return (
     <div className="container">
       <div className="home-wrapper">
-        <Button
-          onClick={() => setIsOpenSignUpModal(true)}
-          style={{ width: "300px" }}
-        >
+        <Button onClick={openSignupModal} style={{ width: "300px" }}>
           회원가입하기
         </Button>
-        <Button
-          onClick={() => setIsOpenLoginModal(true)}
-          style={{ width: "300px" }}
-        >
+        <Button onClick={openLoginModal} style={{ width: "300px" }}>
           로그인하기
         </Button>
-        {isOpenSignUpModal && (
-          <LoginModal
-            variant="signup"
-            closeModal={closeModal}
-            onSubmit={onSubmit}
-          />
+        {isShowSignupModal && (
+          <Modal variant="signup" onClose={closeSignupModal} />
         )}
-        {isOpenLoginModal && (
-          <LoginModal
-            variant="login"
-            closeModal={closeModal}
-            onSubmit={onSubmit}
-          />
+        {isShowLoginModal && (
+          <Modal variant="login" onClose={closeLoginModal} />
         )}
       </div>
     </div>
