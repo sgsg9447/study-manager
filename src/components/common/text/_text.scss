@@ -1,5 +1,9 @@
 //font-size
 //title
+.text-title-12 {
+  @include text-style(12);
+  font-weight: 700;
+}
 .text-title-14 {
   @include text-style(14);
   font-weight: 700;
@@ -21,6 +25,10 @@
   font-weight: 700;
 }
 //content
+.text-content-12 {
+  @include text-style(12);
+  font-weight: 500;
+}
 .text-content-14 {
   @include text-style(14);
   font-weight: 500;
@@ -63,6 +71,9 @@
 }
 .text-color-grayDark {
   @include text-color($grayDark);
+}
+.text-color-grayLight {
+  @include text-color($grayLight);
 }
 .text-color-line {
   @include text-color($line);

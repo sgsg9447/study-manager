@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../../components/common/Button";
-import Modal from "../../components/common/Modal";
+import Button from "../../components/common/button/Button";
+import Modal from "../../components/common/modal/Modal";
 
 export default function Code() {
   const [isOpenModal, setIsOpenModal] = useState(false);

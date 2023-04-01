@@ -1,11 +1,11 @@
-import Button from '../Button';
-import Text from '../Text';
-import useLoginModal from './useLoginModal';
+import Button from "../../button/Button";
+import Text from "../../text/Text";
+import useLoginModal from "./useLoginModal";
 
 //TODO : UI 퍼블리싱
 //TODO : 비밀번호 확인 유효성검사 추가
 
-type Variant = 'signup' | 'login';
+type Variant = "signup" | "login";
 
 interface LoginModalProps {
   variant?: Variant;
@@ -35,7 +35,7 @@ export default function LoginModal({
           e.stopPropagation();
         }}
       >
-        {variant === 'signup' ? (
+        {variant === "signup" ? (
           <form>
             <fieldset>
               <label htmlFor="newEmail">
