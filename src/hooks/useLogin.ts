@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { appAuth } from "../firebase/config";
 import { userAtom } from "../store/userAtom";
 
@@ -12,25 +12,17 @@ export default function useLogin() {
   const login = (email: string, password: string) => {
     setError(null);
     setIsPending(true);
+
     signInWithEmailAndPassword(appAuth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-        console.log(user.email);
-        console.log(user.displayName);
-
-        if (user.email && user.displayName) {
-          setLoginUser({
-            ...loginUser,
-            email: user.email,
-            nickname: user.displayName,
-          });
+        if (user.uid) {
+          setLoginUser(user);
         } else {
-          setLoginUser({ email: "", nickname: "", profileImage: "" });
+          setLoginUser(null);
         }
         setError(null);
         setIsPending(false);
-
         if (!user) {
           throw new Error("로그인 실패");
         }
@@ -38,7 +30,9 @@ export default function useLogin() {
       .catch((error) => {
         setError(error.message);
         setIsPending(false);
+        setLoginUser(null);
       });
   };
-  return { error, isPending, login };
+
+  return { error, isPending, loginUser, login };
 }

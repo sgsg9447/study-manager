@@ -1,10 +1,11 @@
 import { atom } from "recoil";
+import { User } from "firebase/auth";
+import { recoilPersist } from "recoil-persist";
 
-export const userAtom = atom({
+const { persistAtom } = recoilPersist();
+
+export const userAtom = atom<User | null>({
   key: "userAtom",
-  default: {
-    email: "",
-    nickname: "",
-    profileImage: "../assets/images/defaultImage.png", //왜 안되지...?
-  },
+  default: null,
+  effects_UNSTABLE: [persistAtom],
 });
