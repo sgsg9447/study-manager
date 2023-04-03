@@ -4,14 +4,35 @@ import Title from "../title";
 import TodoContent from "./TodoContent";
 import Button from "../../../common/button/Button";
 import Text from "../../../common/text/Text";
+import { appAuth, db } from "../../../../firebase/config";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 
 export default function Todo() {
   const [isAdd, setIsAdd] = useState(false);
+  const [content, setContent] = useState("");
+  const currentUser = appAuth.currentUser;
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    setContent(e.target.value);
   };
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // create
+    if (currentUser) {
+      const todosRef = collection(db, "todos");
+      addDoc(todosRef, {
+        authenticationMethod: "url",
+        complitedAt: Timestamp.fromDate(new Date()),
+        content: content,
+        uid: currentUser.uid,
+      }).then((docRef) => {
+        console.log("새로운 todo가 추가되었습니다. ID:", docRef.id);
+      });
+    } else {
+      console.warn("사용자가 로그인하지 않았습니다.");
+    }
+    setContent("");
+    setIsAdd(false);
+    //update? 한번더 api 요청
   };
 
   return (

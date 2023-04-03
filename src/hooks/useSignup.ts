@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { appAuth, db } from "../firebase/config";
-import UserModel from "../model/User";
 import { userAtom } from "../store/userAtom";
 
 export default function useSignup() {
