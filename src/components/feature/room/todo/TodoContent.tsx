@@ -6,7 +6,7 @@ import Text from "../../../common/text/Text";
 
 interface Props {
   content: string;
-  id: number;
+  id: string;
 }
 
 export default function TodoContent({ content, id }: Props) {
