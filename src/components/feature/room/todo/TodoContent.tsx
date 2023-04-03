@@ -1,8 +1,10 @@
 import { ChangeEvent, useRef, useState } from "react";
 import * as Icon from "react-feather";
+import { db } from "../../../../firebase/config";
 import useShowModal from "../../../../hooks/useShowModal";
 import Modal from "../../../common/modal";
 import Text from "../../../common/text/Text";
+import { deleteDoc, doc } from "firebase/firestore";
 
 interface Props {
   content: string;
@@ -20,6 +22,17 @@ export default function TodoContent({ content, id }: Props) {
   };
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  };
+
+  const deleteTodo = async (id: string) => {
+    const todoDoc = doc(db, "todos", id);
+    await deleteDoc(todoDoc)
+      .then(() => {
+        console.log("todo 삭제");
+      })
+      .catch((error) => {
+        console.error("todo 삭제 오류");
+      });
   };
   return (
     <>
@@ -49,11 +62,7 @@ export default function TodoContent({ content, id }: Props) {
           <button onClick={() => console.log("edit")}>
             <Icon.Edit2 size={18} color="white" />
           </button>
-          <button
-            onClick={async () => {
-              console.log("delete");
-            }}
-          >
+          <button onClick={() => deleteTodo(id)}>
             <Icon.Trash size={18} color="white" />
           </button>
         </div>
