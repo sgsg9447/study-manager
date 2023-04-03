@@ -61,7 +61,7 @@ export default function Todo() {
 
   return (
     <div className="item todo">
-      <Title titleName="todo" children={4} />
+      <Title titleName="todo" children={todoData.length} />
 
       <div className="todo-content-layout-container">
         <div className="todo-tontent-layout-wrapper">
